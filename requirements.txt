@@ -1,0 +1,4 @@
+aiogram-dialog @ https://github.com/mixartemev/aiogram_dialog/archive/refs/heads/feature/aiogram3.zip
+deta
+environs
+Babel
