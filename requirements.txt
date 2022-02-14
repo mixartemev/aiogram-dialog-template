@@ -2,3 +2,7 @@ aiogram-dialog @ https://github.com/mixartemev/aiogram_dialog/archive/refs/heads
 deta
 environs
 Babel
+aioredis
+beanie
+aiolimiter
+loguru

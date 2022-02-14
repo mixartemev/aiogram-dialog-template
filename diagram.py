@@ -6,4 +6,4 @@ from loader import registry
 
 registry.register_start_handler(MainSG.home)  # get all windows from root
 asyncio.run(render_preview(registry, "diagram/preview.html"))  # render windows preview (async)
-render_transitions(registry, filename='diagram/adt')  # render graph with current transitions
+render_transitions(registry, filename='diagram/dd')  # render graph with current transitions

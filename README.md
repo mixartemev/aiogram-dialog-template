@@ -21,8 +21,13 @@ python main.py
 
 ### Localization
 ```sh
-pybabel extract dialogs -o locales/adt.pot # i18n init
-pybabel init -i locales/adt.pot -d locales -D adt -l ru # add new lang
-pybabel update -i locales/adt.pot -d locales -D adt # update translate files
-pybabel compile -d locales -D adt # compile
+pybabel extract dialogs -o locales/dd.pot # i18n init
+pybabel init -i locales/dd.pot -d locales -D dd -l ru # add new lang
+pybabel update -i locales/dd.pot -d locales -D dd # update translate files
+pybabel compile -d locales -D dd # compile
+```
+
+### Diagrams generating
+```sh
+python diagram.py
 ```
