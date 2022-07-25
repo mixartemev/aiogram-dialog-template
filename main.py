@@ -25,7 +25,7 @@ async def app_shutdown(a: Application) -> None:  # pragma: no cover
     logging.warning("Bye!")
 
 
-registry.register_start_handler(MainSG.home)  # resets stack and start dialogs on /start command
+registry.register_start_handler(MainSG.set_opponent)  # resets stack and start dialogs on /start command
 
 middlewares.setup(dp)
 

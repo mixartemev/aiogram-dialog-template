@@ -1,7 +1,7 @@
 from .base import TimeBaseModel
-from .user import UserModel, UserRoles, Ids
+from .user import UserModel, UserRoles, UserIds
 
 __models__ = [
     UserModel,
-    Ids
+    UserIds
 ]

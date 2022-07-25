@@ -22,7 +22,7 @@ class ACLMiddleware(BaseMiddleware):
 
         if user and chat and chat.type == 'private':
             if not (user_db := await UserModel.find_one(UserModel.id == user.id)):
-                user_db = await UserModel(id=user.id, language_code=user.language_code).create()
+                user_db = await UserModel(id=user.id, language_code=user.language_code, nick=user.username).create()
                 await notify_new_user(user, bot)
 
             data["user"] = user_db

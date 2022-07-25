@@ -1,30 +1,27 @@
 from enum import Enum
+from typing import Optional
 
-from beanie import Document
+from beanie import Link
 from pydantic import Field
-
 from models.base import TimeBaseModel
 
 
-class UserRoles(str, Enum):
-    new = 'new'
-    user = 'user'
-    admin = 'admin'
+class UserRoles(int, Enum):
+    new = 0
+    user = 1
+    admin = 2
 
 
-class UserModel(TimeBaseModel):
+class UserIds(TimeBaseModel):
     id: int = Field(...)
-    language: str = 'en'
-    real_language: str = 'en'
-    role: UserRoles = Field(default=UserRoles.new)
-    status: str = 'member'
+    nick: str = None
 
     class Collection:
         name = "UserModel"
 
 
-class Ids(Document):
-    id: int = Field(...)
-    #
-    # class Collection:
-    #     name = "UserModel"
+class UserModel(UserIds):
+    role: UserRoles = Field(default=UserRoles.new)
+    blocked: bool = False
+    language_code: str = None
+    ref: Optional[Link[UserIds]] = None

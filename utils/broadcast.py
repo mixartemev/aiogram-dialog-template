@@ -6,7 +6,7 @@ from typing import AsyncGenerator, Callable, Any, Awaitable, Iterable
 
 from aiogram.exceptions import TelegramRetryAfter
 
-from models import UserModel, UserRoles, Ids
+from models import UserModel, UserRoles, UserIds
 
 logger = logging.getLogger(__name__)
 
@@ -50,4 +50,4 @@ async def from_iterable(it: Iterable) -> AsyncGenerator:
 
 
 async def get_admins() -> [int | None]:
-    return await UserModel.find(UserModel.role == UserRoles.admin, projection_model=Ids).to_list()
+    return await UserModel.find(UserModel.role == UserRoles.admin, projection_model=UserIds).to_list()
